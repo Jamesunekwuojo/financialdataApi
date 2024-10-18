@@ -88,15 +88,15 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': '',
+        'NAME': 'financialDBaws',
 
-        'USER': '',
+        'USER': 'James',
 
-        'PASSWORD': '',
+        'PASSWORD': 'BLOCKHOUSEcANDEE1',
 
-        'HOST' : '',
+        'HOST' : 'database-1.c5imo2y6ogzp.eu-north-1.rds.amazonaws.com',
 
-        'PORT' : '',
+        'PORT' : '5432',
 
     }
 }
