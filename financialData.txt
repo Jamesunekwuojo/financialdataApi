@@ -1,0 +1,51 @@
+* Create a  python virtual environment (have a virtual environment enabled)
+windows - `python -m venv myenv`
+
+* install Dependencies: pip install django, pip install pyscopg2(to interact with Postgress DB),
+* after intstallation of this packages, create a new django project using `django-admin startproject financialData`
+
+* cd finacialData, go to settings.py and change the database setting to suit postgresql pattern.
+* Create postgres DB on `AWS RDS` (that's what we are going to use to connect our django project to our postgres database)
+*Create yoir models in the models.py file. That's define database model for the stock data
+
+* After models definiation runmigrations to integrate changes . `python manage.py  makemigrations stocs`
+`python manage.py migrate`
+
+* Go to Apha Vantage API documentation and get a free API `https://www.alphavantage.co/support/#api-key.`
+* store API key in a 	`dotenv` file
+
+* Create `services.py` file in the stock app. this is where the business logic for interacting with Alpha Vantage API will be written.
+
+* Use the API key provided  and the url to fetch stock data in the `fetch_stock_data` function in stocks app.
+
+*Now in our `views.py` we are going to create a Django view which would allow for fetching 
+of  stock data.  The  `fetch_stock_data()`  in `services.py` would be triggered from this view.
+ 
+* in `urls.py` under  stocks folder. The url path for the view we created wll be define. 
+This would allow endpoint access and trigger data fetching. By calling the `as_view()` method
+Django converts the CBV(class base view) into function-based view that can handle requests.
+
+* Update the main project urls.py to ass App's url
+
+* Add API key to `settings.py`, install  `python-dotenv` to load dotenv variables to settings
+
+
+* Create a django superuser using `python manage.py createsuperuser` and then after that you can run the server using the 
+command  `python manage.py runserver`
+
+
+
+
+
+
+
+
+
+
+
+
+
+<------HARD LESSONS LEARNT----->
+* Econter unable to resove AWS postgresql host name, due to different version of the psycopg2 package installed in my virtual environment.
+Solution: Uninstall both packages `pip uninstall psycopg2`  and then intsall the desired version
+

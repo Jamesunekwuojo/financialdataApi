@@ -89,6 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
 
         'NAME': 'financialDBaws',
+      
 
         'USER': 'James',
 
@@ -97,6 +98,7 @@ DATABASES = {
         'HOST' : 'database-1.c5imo2y6ogzp.eu-north-1.rds.amazonaws.com',
 
         'PORT' : '5432',
+        
 
     }
 }
