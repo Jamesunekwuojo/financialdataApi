@@ -18,7 +18,7 @@ def fetch_stock_data(symbol):
         'apikey': 'FYYEN13Y4REOFXPD',  # API Key stored in settings
     }
 
-    response = requests.get(ALPHA_VANTAGE_API_URL, params=params)
+    response = requests.get(ALPHA_VANTAGE_API_URL, params=params, timeout=10)
     data = response.json()
     
     if "Time Series (Daily)" not in data:
