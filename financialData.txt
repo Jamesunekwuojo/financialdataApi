@@ -47,5 +47,5 @@ command  `python manage.py runserver`
 
 <------HARD LESSONS LEARNT----->
 * Econter unable to resove AWS postgresql host name, due to different version of the psycopg2 package installed in my virtual environment.
-Solution: Uninstall both packages `pip uninstall psycopg2`  and then intsall the desired version
+Solution: Uninstall both packages `pip uninstall psycopg2`  and then intsall the desired version for it to work
 
